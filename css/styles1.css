@@ -1,0 +1,47 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.top_header{
+	background-color: #ddd;
+	margin-top: -15px;
+	position: relative;
+}
+.top_header ul{
+	list-style-type: none;
+	text-align: center;
+}
+.top_header ul li{
+	display: inline-block;
+	padding: 17px 30px 17px 30px;
+	font-family: Arial;
+	transition-duration: .5s;
+}
+.top_header{
+	/*height: 600px;*/
+	height: 50px;
+	width: 100%;
+	box-sizing: border-box;
+	border-color: black;
+	/*background-color: #aaa;*/
+	margin-top: -17px;
+	/*background: url('../images/rail1.jpg');*/
+	background-size: cover;
+	position: relative;
+
+}
+.top_header ul li:hover{
+	background-color: #aaa;
+	cursor: pointer;
+}
+.logo_main{
+	height: 50px;
+	width: 50px;
+	background: url('../images/logo.png');
+	background-size: cover;
+	/*background-color: red;*/
+	border-radius: 50%;
+	position: absolute;
+	left: 30px;
+	top: 2px;
+}

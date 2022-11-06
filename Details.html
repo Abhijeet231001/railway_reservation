@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Details of Users</title>
+	<link rel="stylesheet" type="text/css" href="css/styles1.css">
+</head>
+<body>
+	<body style="background-image: url('rail1.jpg');">
+	<nav class="top_header">
+		<div class="logo_main"></div>
+		<ul>
+		    <a href="Login.html"><li>Login</li></a>
+		    <a href="Admin.html"><li>Admin Login</li></a>
+			<a href="train-status.html"><li>Current Train status</li></a>
+			<a href="book.html"><li>Book Ticket</li></a>
+			<a href="cancel.html"><li>Cancel Ticket</li></a>
+			<a href="Contact.html"><li>Contact Us</li></a>
+			<a href="index.html"><img src="logo1.png" style="height: 21px;width: 21px;position: relative;left: 270px"></a>
+		</ul>
+				<table  class="table">
+				<tr>
+					<th style="width:10px;border-top:0px;">SNo.</th>
+					<th style="width:100px;border-top:0px;" >From</th>
+					<th style="width:100px;border-top:0px;">To</th>
+					<th style="width:100px;border-top:0px;">Name</th>
+					<th style="width:100px;border-top:0px;">Age</th>
+					<th style="width:100px;border-top:0px;">Gender</th>
+					<th style="width:100px;border-top:0px;">Train-no</th>
+					<th style="width:100px;border-top:0px;">Status</th>
+					<th style="width:100px;border-top:0px;">Date</th>
+					<th style="width:100px;border-top:0px;">DOB</th>
+					<th style="width:100px;border-top:0px;">Classes</th>
+				</tr>	
+				<tr>
+					<th style="width:10px;border-top:0px;"></th>
+					<th style="width:100px;border-top:0px;" id="From"></th>
+					<th style="width:100px;border-top:0px;"id="To"></th>
+					<th style="width:100px;border-top:0px;"id="Name"></th>
+					<th style="width:100px;border-top:0px;"id="Age"></th>
+					<th style="width:100px;border-top:0px;"id="Gender"></th>
+					<th style="width:100px;border-top:0px;"id="train_no"></th>
+					<th style="width:100px;border-top:0px;"id="Status"></th>
+					<th style="width:100px;border-top:0px;"id="Date1"></th>
+					<th style="width:100px;border-top:0px;"id="DOB"></th>
+					<th style="width:100px;border-top:0px;"id="Classes"></th>
+				</tr>	
+</table>
+<div id="Bill">
+	Total Cost:
+</div>
+<script type="text/javascript">
+	const From=localStorage.getItem("From");
+	const To=localStorage.getItem("To");
+	const Name=localStorage.getItem("Name");
+	const Age=localStorage.getItem("Age");
+	const Gender=localStorage.getItem("Gender");
+	const train_no=localStorage.getItem("train_no");
+	const Status=localStorage.getItem("Status");
+	const Date1=localStorage.getItem("Date1");
+	const DOB=localStorage.getItem("DOB1");
+	const Classes=localStorage.getItem("Classes");
+	document.getElementById('From').innerHTML+=From;
+	document.getElementById('To').innerHTML+=To;
+	document.getElementById('Name').innerHTML+=Name;
+	document.getElementById('Age').innerHTML+=Age;
+	document.getElementById('Gender').innerHTML+=Gender;
+	document.getElementById('train_no').innerHTML+=train_no;
+	document.getElementById('Status').innerHTML+=Status;
+	document.getElementById('Date1').innerHTML+=Date1;
+	document.getElementById('DOB').innerHTML+=DOB;
+	document.getElementById('Classes').innerHTML+=Classes;
+	
+	var Price=0;
+	if (From=="Delhi" && To=="Mumbai") {
+		Price=2000;
+	}
+	else if(From=="Punjab" && To=="Mumbai"){
+        Price=1300;
+	}
+	else if(From=="Punjab" && To=="Delhi"){
+        Price=800;
+	}
+	else if(From=="Rajasthan" && To=="Mumbai"){
+        Price=1000;
+	}
+	else if(From=="Uttarakhand" && To=="Mumbai"){
+        Price=1800;
+	}
+	document.getElementById('Bill').innerHTML+="Rs "+Price;
+
+
+
+
+</script>
+</body>
+</html>

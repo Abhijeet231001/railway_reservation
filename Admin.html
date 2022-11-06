@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Login</title>
+	<link rel="stylesheet" type="text/css" href="css/Login.css">
+</head>
+<body>
+  <div class="login">
+    <h1>Login user</h1>
+    <form method="post" id="login_form">
+      <p><input type="email" name="login" value="" placeholder="Username or Email" size="30" required id="uname"></p>
+      <p><input type="password" name="password" value="" placeholder="Password" required id="password"></p>
+      <p class="remember_me">
+        <label>
+          <input type="checkbox" name="remember_me" id="remember_me">
+          Remember me on this computer
+        </label>
+      </p>
+      <p class="submit"><input type="submit" name="commit" value="Login"></p>
+    </form>
+  </div>
+
+  <div class="login-help">
+    <p>Forgot your password? <a href="#">Click here to reset it</a>.</p>
+  </div>
+  <script>
+    document.getElementById("login_form").addEventListener("submit",
+    function login(e){
+      const email = document.getElementById("uname").value;
+      const password = document.getElementById("password").value;
+
+      if (email=="admin@gmail.com" && password=="root") {
+        window.location.href = "index1.html";
+      }
+      else{
+        alert("Wrong credentials")
+        e.preventDefault()
+        return false;
+      }
+      e.preventDefault()
+      return false;
+    })
+    
+  </script>
+</body>
+</html>
+
+

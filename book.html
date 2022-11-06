@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ticket Booking</title>
+</head>
+<body style="height: 730px;position: absolute;left: 500px;box-shadow: 0px 5px 8px rgba(0,0,0,.6);top: 30px;box-sizing: border-box;padding: 8px 20px 3px 20px;background-color: #fff;width: 450px;text-align: center;font-family: Arial;">
+		<nav class="book_ticket_form">
+			<div>
+				<h1>BOOK</h1>
+				<h2>YOUR TICKET</h2>
+				<img src="rail_icon.png">
+			</div>
+			<br/>
+<div style="margin: 20px;"class="form_div">
+				<form class="book_form" onsubmit="return false;" >
+					<div> 
+						<input style="width: 90%;height: 30px;border-radius: 6px;border: 1px solid #aaa;padding: 7px;" type="text" name="" placeholder="From*" required="required" id="From1">
+					</div>
+					<div>
+						<input style="width: 90%;height: 30px;border-radius: 6px;border: 1px solid #aaa;padding: 7px;" type="text" name="" placeholder="To*" required="required" id="To1">
+					</div>
+					<div>
+						<input  style="width: 90%;height: 30px;border-radius: 6px;border: 1px solid #aaa;padding: 7px;" type="text" name="" placeholder="Name*" id="Name1">
+					</div>
+					<div> 
+						<input style="width: 90%;height: 30px;border-radius: 6px;border: 1px solid #aaa;padding: 7px;" type="text" name=""placeholder="Age*" required="required" id="Age1">
+					</div>
+					<div> 
+						<select style="width: 95%;height: 40px;border-radius: 6px;border: 1px solid #aaa;padding-left: 10px;" placeholder="Gender*" id="Gender">
+							<option value="" disabled selected hidden>Choose Gender</option>
+							<option>Male</option>
+							<option>Female</option>
+							<option>Others</option>
+					</div>
+					<div> 
+						<input style="width: 90%;height: 30px;border-radius: 6px;border: 1px solid #aaa;padding: 7px;" type="text" name="" required="required" placeholder="Train-no*" id="train_no">
+					</div>
+					<div> 
+						<select style="width: 95%;height: 40px;border-radius: 6px;border: 1px solid #aaa;padding-left: 10px;" placeholder="Status*" id="Status">
+							<option value="" disabled selected hidden>Choose Status</option>
+							<option>Married</option>
+							<option>Unmarried</option>
+					</div>
+					<div> 
+						<input style="width: 90%;height: 30px;border-radius: 6px;border: 1px solid #aaa;padding: 7px;" type="Date" name="" placeholder="Date*" required="required" id="Date1">
+					</div>
+					<div> 
+						<input style="width: 90%;height: 30px;border-radius: 6px;border: 1px solid #aaa;padding: 7px;" type="Date" name="" placeholder="Date of birth" required="required" id="DOB1">
+					</div>
+					<div>
+						<select style="width: 95%;height: 40px;border-radius: 6px;border: 1px solid #aaa;padding-left: 10px;" id="Classes">
+							<option>All Classes</option>
+							<option>AC 2 Tier</option>
+							<option>AC 3 Tier</option>
+							<option>AC 1 Tier</option>
+							<option>Sleeperr</option>
+						</select>
+					</div>
+					<div>
+						<button style="padding: 8px 12px 8px 12px;border-radius: 2px;cursor: pointer;" onclick="Booking()">Book Now</button>
+					</div>
+				</form>
+			</div>
+		</nav>
+		<script type="text/javascript">
+			function Booking(){
+				//alert("Hello");
+            const From=document.getElementById('From1').value;
+            const To=document.getElementById('To1').value;
+            const Name=document.getElementById('Name1').value;
+            const Age=document.getElementById('Age1').value;
+            const Gender=document.getElementById('Gender').value;
+            const train_no=document.getElementById('train_no').value;
+            const Status=document.getElementById('Status').value;
+            const Date1=document.getElementById('Date1').value;
+            const DOB1=document.getElementById('DOB1').value;
+            const Classes=document.getElementById('Classes').value;
+           // alert(Classes);
+            localStorage.setItem("From",From);
+            localStorage.setItem("To",To);
+            localStorage.setItem("Name",Name);
+            localStorage.setItem("Age",Age);
+            localStorage.setItem("Gender",Gender);
+            localStorage.setItem("train_no",train_no);
+            localStorage.setItem("Status",Status);
+            localStorage.setItem("Date1",Date1);
+            localStorage.setItem("DOB1",DOB1);
+            localStorage.setItem("Classes",Classes);
+
+           	
+            var arr=[From, To, Name, Age, Gender, train_no, Status, Date1, DOB1, Classes];
+			
+			var data = localStorage.all;
+			const d_arr = JSON.parse(data);
+
+			d_arr.push(arr)
+
+
+			localStorage.setItem("all",JSON.stringify(d_arr));
+
+            alert("Your Ticket is booked");
+ 			window.location.href="Details.html";
+			}
+		</script>
+</body>
+</html>

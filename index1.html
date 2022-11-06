@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Details of Users</title>
+	<link rel="stylesheet" type="text/css" href="css/styles1.css">
+	<style type="text/css">
+		body{
+			width: 100%;
+		}
+		table{
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 30px;
+		}
+		tr{
+			padding: 10px;
+			text-align: center;
+		}
+		/*tr:nth-child(odd){
+			background-color: wheat;
+		}*/
+		th{
+			background-color: wheat;
+		}
+		table,th,tr,td{
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+<body>
+	<body style="background-image: url('rail1.jpg');">
+	<nav class="top_header">
+		<div class="logo_main"></div>
+		<ul>
+		    <a href="Login.html"><li>Login</li></a>
+		    <a href="Admin.html"><li>Admin Login</li></a>
+			<a href="train-status.html"><li>Current Train status</li></a>
+			<a href="book.html"><li>Book Ticket</li></a>
+			<a href="cancel.html"><li>Cancel Ticket</li></a>
+			<a href="Contact.html"><li>Contact Us</li></a>
+			<a href="index.html"><img src="logo1.png" style="height: 21px;width: 21px;position: relative;left: 270px"></a>
+		</ul>
+	</nav>
+
+<table  class="table" id="table_details">
+	<tr>
+		<th style="width:10px;border-top:0px;">SNo.</th>
+		<th style="width:100px;border-top:0px;" >From</th>
+		<th style="width:100px;border-top:0px;">To</th>
+		<th style="width:100px;border-top:0px;">Name</th>
+		<th style="width:100px;border-top:0px;">Age</th>
+		<th style="width:100px;border-top:0px;">Gender</th>
+		<th style="width:100px;border-top:0px;">Train-no</th>
+		<th style="width:100px;border-top:0px;">Status</th>
+		<th style="width:100px;border-top:0px;">Date</th>
+		<th style="width:100px;border-top:0px;">DOB</th>
+		<th style="width:100px;border-top:0px;">Classes</th>
+	</tr>
+</table>
+	<script type="text/javascript">
+		var data = localStorage.all;
+		// alert(data[1])
+		const d_arr = JSON.parse(data);
+		// alert(d_arr)
+
+		for (var i = 0; i < d_arr.length; i++) {
+			var data_inner = d_arr[i];
+			document.getElementById("table_details").innerHTML +="\
+				<tr>\
+					<td>"+(i+1)+"</td>\
+					<td>"+data_inner[0]+"</td>\
+					<td>"+data_inner[1]+"</td>\
+					<td>"+data_inner[2]+"</td>\
+					<td>"+data_inner[3]+"</td>\
+					<td>"+data_inner[4]+"</td>\
+					<td>"+data_inner[5]+"</td>\
+					<td>"+data_inner[6]+"</td>\
+					<td>"+data_inner[7]+"</td>\
+					<td>"+data_inner[8]+"</td>\
+					<td>"+data_inner[9]+"</td>\
+				</tr>\
+			"
+		}
+	</script>
+</body>
+</html>

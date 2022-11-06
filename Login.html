@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head >
+    <style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-image: url('rail1.jpg')  
+}  
+button {   
+       background-color: #4CAF50;   
+       width: 100px;  
+        color: blue;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+        left: 10px;
+        position: relative;
+         }   
+ input[type=text] {   
+        width: 200px;
+        height: 200px   
+        margin: 7px 0;  
+        padding: 12px 10px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+        left: 10px;
+        position: relative;
+    }  
+    input[type=password]{
+        width: 200px;
+        height: 200px   
+        margin: 7px 0;  
+        padding: 12px 10px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box; 
+        left: 10px;
+        position: relative;
+        
+    }
+ button:hover {   
+        opacity: 0.7;   
+    }   
+ .container {   
+        padding: 15px;   
+        background-color: lightblue;  
+        height: 300px;
+        width: 450px;
+        position: relative;
+        left: 500px;
+    }   
+</style>   
+</head>
+<body>  
+    <center> <h1> User Login Form </h1> </center>   
+    <form action="book.html">  
+        <div class="container" style="text-align: center;border: 2px solid green;">  
+        <br>
+        <br> 
+            <label style="left: 5px;
+        position: relative;">Username : </label>   
+            <input type="text" placeholder="Enter Username" name="username" required>  
+            <br>
+            <br>
+            <label style="left: 5px;
+        position: relative;">Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" required> 
+            <br>
+            <br> 
+            <button type="submit">Login</button>  
+            <br> 
+            <input type="checkbox" checked="checked" style="left: 10px;
+        position: relative;"> &nbsp&nbsp&nbsp&nbspRemember me      
+           &nbsp&nbsp Forgot <a href="#" style="position: relative; right: 0px;"> password? </a>   
+        </div>   
+    </form>     
+</body>     
+</html>  
